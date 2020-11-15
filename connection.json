@@ -1,0 +1,59 @@
+{
+    "name": "com-sensefinity-blockchain-org1",
+    "version": "1.0.0",
+    "client": {
+        "tlsEnable": true,
+        "adminCredential": {
+            "id": "admin",
+            "password": "admin"
+        },
+        "enableAuthentication": false,
+        "organization": "Org1MSP",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "mychannel": {
+            "peers": {
+                "peer0.org1.blockchain.sensefinity.com": {}
+            },
+            "connection": {
+                "timeout": {
+                    "peer": {
+                        "endorser": "6000",
+                        "eventHub": "6000",
+                        "eventReg": "6000"
+                    }
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Org1MSP": {
+            "mspid": "Org1MSP",
+            "adminPrivateKey": {
+                "path": "/tmp/crypto/peerOrganizations/org1.blockchain.sensefinity.com/users/Admin@org1.blockchain.sensefinity.com/msp/keystore/e34fa9c6acbaf3443a2f1126c013151fbb6cad24eb8e55b205720bc376bb0a94_sk"
+            },
+            "peers": [
+                "peer0.org1.blockchain.sensefinity.com"
+            ],
+            "signedCert": {
+                "path": "/tmp/crypto/peerOrganizations/org1.blockchain.sensefinity.com/users/Admin@org1.blockchain.sensefinity.com/msp/signcerts/cert.pem"
+            }
+        }
+    },
+    "peers": {
+        "peer0.org1.blockchain.sensefinity.com": {
+            "tlsCACerts": {
+                "path": "/tmp/crypto/peerOrganizations/org1.blockchain.sensefinity.com/peers/peer0.org1.blockchain.sensefinity.com/tls/ca.crt"
+            },
+            "url": "grpcs://peer0.org1.blockchain.sensefinity.com:7051"
+        }
+    }
+}

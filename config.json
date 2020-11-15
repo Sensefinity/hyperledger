@@ -1,0 +1,9 @@
+{
+    "network-configs": {
+        "com-sensefinity-blockchain-org1": {
+            "name": "com-sensefinity-blockchain-org1",
+            "profile": "connection.json"
+        }
+    },
+    "license": "Apache-2.0"
+}
